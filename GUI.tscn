@@ -1,0 +1,552 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GUI.gd" type="Script" id=2]
+
+[sub_resource type="ButtonGroup" id=1]
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 27.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddLensButton" type="Button" parent="PanelContainer/HBoxContainer"]
+margin_right = 71.0
+margin_bottom = 20.0
+text = "Add Lens"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddRaysButtons" type="MenuButton" parent="PanelContainer/HBoxContainer"]
+margin_left = 87.0
+margin_right = 157.0
+margin_bottom = 20.0
+group = SubResource( 1 )
+text = "Add Rays"
+items = [ "Single Ray", null, 0, false, false, 0, 0, null, "", false, "Paralel Rays", null, 0, false, false, 1, 0, null, "", false, "Omnidirectional Rays", null, 0, false, false, 2, 0, null, "", false ]
+
+[node name="AddApertureButton" type="Button" parent="PanelContainer/HBoxContainer"]
+margin_left = 173.0
+margin_right = 270.0
+margin_bottom = 20.0
+text = "Add Aperture"
+
+[node name="ChangeBgButton" type="Button" parent="PanelContainer/HBoxContainer"]
+margin_left = 286.0
+margin_right = 422.0
+margin_bottom = 20.0
+text = "Change Background"
+
+[node name="ResetBgButton" type="Button" parent="PanelContainer/HBoxContainer"]
+margin_left = 438.0
+margin_right = 564.0
+margin_bottom = 20.0
+text = "Reset Background"
+
+[node name="Control" type="Control" parent="PanelContainer/HBoxContainer"]
+margin_left = 580.0
+margin_right = 663.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="NewButton" type="Button" parent="PanelContainer/HBoxContainer"]
+margin_left = 679.0
+margin_right = 760.0
+margin_bottom = 20.0
+text = "New Board"
+
+[node name="LoadButton" type="Button" parent="PanelContainer/HBoxContainer"]
+margin_left = 776.0
+margin_right = 818.0
+margin_bottom = 20.0
+text = "Load"
+
+[node name="SaveButton" type="Button" parent="PanelContainer/HBoxContainer"]
+margin_left = 834.0
+margin_right = 875.0
+margin_bottom = 20.0
+text = "Save"
+
+[node name="SaveAsButton" type="Button" parent="PanelContainer/HBoxContainer"]
+margin_left = 891.0
+margin_right = 952.0
+margin_bottom = 20.0
+text = "Save As"
+
+[node name="HelpButton" type="Button" parent="PanelContainer/HBoxContainer"]
+margin_left = 968.0
+margin_right = 1010.0
+margin_bottom = 20.0
+text = "Help"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_right = 512.0
+margin_bottom = 352.0
+window_title = "Uložiť súbor"
+resizable = true
+access = 2
+current_dir = "D:/Skola/VUT FIT/ITAI/2. semester/FYO/Projekt"
+current_path = "D:/Skola/VUT FIT/ITAI/2. semester/FYO/Projekt/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LensSettingsDialog" type="WindowDialog" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -232.0
+margin_top = -216.0
+window_title = "Lens Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="LensSettingsDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LensSettingsDialog/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 223.0
+margin_bottom = 206.0
+custom_constants/separation = 5
+
+[node name="GridContainer" type="GridContainer" parent="LensSettingsDialog/MarginContainer/VBoxContainer"]
+margin_right = 213.0
+margin_bottom = 169.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 5
+columns = 3
+
+[node name="Label3" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 5.0
+margin_right = 103.0
+margin_bottom = 19.0
+text = "Radius 1"
+align = 2
+
+[node name="Radius1SpinBox" type="SpinBox" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 108.0
+margin_right = 182.0
+margin_bottom = 24.0
+min_value = -1e+08
+max_value = 1e+08
+step = 0.1
+allow_greater = true
+allow_lesser = true
+
+[node name="Label2" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 187.0
+margin_top = 5.0
+margin_right = 213.0
+margin_bottom = 19.0
+text = "mm"
+
+[node name="Label5" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 34.0
+margin_right = 103.0
+margin_bottom = 48.0
+text = "Radius 2"
+align = 2
+
+[node name="Radius2SpinBox" type="SpinBox" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 108.0
+margin_top = 29.0
+margin_right = 182.0
+margin_bottom = 53.0
+min_value = -1e+08
+max_value = 1e+08
+step = 0.1
+allow_greater = true
+allow_lesser = true
+
+[node name="Label4" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 187.0
+margin_top = 34.0
+margin_right = 213.0
+margin_bottom = 48.0
+text = "mm"
+
+[node name="Label" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 63.0
+margin_right = 103.0
+margin_bottom = 77.0
+text = "Distance"
+align = 2
+
+[node name="DistanceSpinBox" type="SpinBox" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 108.0
+margin_top = 58.0
+margin_right = 182.0
+margin_bottom = 82.0
+min_value = 0.1
+max_value = 1e+08
+step = 0.1
+value = 0.1
+allow_greater = true
+
+[node name="Label6" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 187.0
+margin_top = 63.0
+margin_right = 213.0
+margin_bottom = 77.0
+text = "mm"
+
+[node name="Label7" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 92.0
+margin_right = 103.0
+margin_bottom = 106.0
+text = "Width"
+align = 2
+
+[node name="WidthSpinBox" type="SpinBox" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 108.0
+margin_top = 87.0
+margin_right = 182.0
+margin_bottom = 111.0
+min_value = 0.1
+max_value = 1e+08
+step = 0.1
+value = 0.1
+allow_greater = true
+
+[node name="Label8" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 187.0
+margin_top = 92.0
+margin_right = 213.0
+margin_bottom = 106.0
+text = "mm"
+
+[node name="Label9" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 121.0
+margin_right = 103.0
+margin_bottom = 135.0
+text = "Height"
+align = 2
+
+[node name="HeightSpinBox" type="SpinBox" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 108.0
+margin_top = 116.0
+margin_right = 182.0
+margin_bottom = 140.0
+min_value = 0.1
+max_value = 1e+08
+step = 0.1
+value = 0.1
+allow_greater = true
+
+[node name="Label10" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 187.0
+margin_top = 121.0
+margin_right = 213.0
+margin_bottom = 135.0
+text = "mm"
+
+[node name="Label11" type="Label" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 150.0
+margin_right = 103.0
+margin_bottom = 164.0
+text = "Refractive Index"
+
+[node name="RefrIndexSpinBox" type="SpinBox" parent="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 108.0
+margin_top = 145.0
+margin_right = 182.0
+margin_bottom = 169.0
+min_value = 1.0
+max_value = 5.0
+step = 0.001
+value = 1.0
+
+[node name="Remove" type="Button" parent="LensSettingsDialog/MarginContainer/VBoxContainer"]
+modulate = Color( 1, 0.631373, 0.631373, 1 )
+margin_top = 174.0
+margin_right = 213.0
+margin_bottom = 194.0
+custom_constants/hseparation = 50
+text = "Remove Lens"
+
+[node name="RaySettingsDialog" type="WindowDialog" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -192.0
+margin_top = -48.0
+margin_bottom = 48.0
+window_title = "Ray Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="RaySettingsDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RaySettingsDialog/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 182.0
+margin_bottom = 86.0
+custom_constants/separation = 5
+
+[node name="GridContainer" type="GridContainer" parent="RaySettingsDialog/MarginContainer/VBoxContainer"]
+margin_right = 172.0
+margin_bottom = 49.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 5
+columns = 2
+
+[node name="Label" type="Label" parent="RaySettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 3.0
+margin_right = 38.0
+margin_bottom = 17.0
+text = "Color"
+align = 2
+
+[node name="RayColorButton" type="ColorPickerButton" parent="RaySettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 43.0
+margin_right = 172.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+color = Color( 0.658824, 0.298039, 0.298039, 1 )
+
+[node name="Label2" type="Label" parent="RaySettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 30.0
+margin_right = 38.0
+margin_bottom = 44.0
+text = "Width"
+align = 2
+
+[node name="RayWidthSpinBox" type="SpinBox" parent="RaySettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 43.0
+margin_top = 25.0
+margin_right = 172.0
+margin_bottom = 49.0
+min_value = 1.0
+max_value = 10000.0
+value = 1.0
+allow_greater = true
+
+[node name="RemoveRayButton" type="Button" parent="RaySettingsDialog/MarginContainer/VBoxContainer"]
+modulate = Color( 1, 0.631373, 0.631373, 1 )
+margin_top = 54.0
+margin_right = 172.0
+margin_bottom = 74.0
+text = "Remove Ray"
+
+[node name="HelpDialog" type="WindowDialog" parent="."]
+margin_right = 296.0
+margin_bottom = 272.0
+window_title = "Help"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="HelpDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HelpDialog/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 286.0
+margin_bottom = 262.0
+size_flags_vertical = 1
+text = "To move lens click and drag it.
+
+To  move ray click on circle at start of ray and drag it.
+
+To change direction of ray, click on circle at start of ray and and it will follow mouse while holding right mouse button.
+
+If you want to recreate lens, open scheme of it (in png or jpg format) with Change Background button.
+
+Author:
+Timotej Halas (xhalas10)"
+autowrap = true
+
+[node name="ApertureSettingsDialog" type="WindowDialog" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -184.0
+margin_top = -128.0
+window_title = "Aperture Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ApertureSettingsDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ApertureSettingsDialog/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 174.0
+margin_bottom = 118.0
+custom_constants/separation = 5
+
+[node name="GridContainer" type="GridContainer" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer"]
+margin_right = 164.0
+margin_bottom = 82.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 5
+columns = 3
+
+[node name="Label" type="Label" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 5.0
+margin_right = 54.0
+margin_bottom = 19.0
+text = "Opening"
+align = 2
+
+[node name="OpeningSpinBox" type="SpinBox" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 59.0
+margin_right = 133.0
+margin_bottom = 24.0
+max_value = 1e+07
+step = 0.1
+
+[node name="Label2" type="Label" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 138.0
+margin_top = 5.0
+margin_right = 164.0
+margin_bottom = 19.0
+text = "mm"
+
+[node name="Label5" type="Label" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 34.0
+margin_right = 54.0
+margin_bottom = 48.0
+text = "Height"
+align = 2
+
+[node name="AHeightSpinBox" type="SpinBox" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 59.0
+margin_top = 29.0
+margin_right = 133.0
+margin_bottom = 53.0
+max_value = 1e+08
+step = 0.1
+
+[node name="Label4" type="Label" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 138.0
+margin_top = 34.0
+margin_right = 164.0
+margin_bottom = 48.0
+text = "mm"
+
+[node name="Label3" type="Label" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 63.0
+margin_right = 54.0
+margin_bottom = 77.0
+text = "Width"
+align = 2
+
+[node name="AWidthSpinBox" type="SpinBox" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 59.0
+margin_top = 58.0
+margin_right = 133.0
+margin_bottom = 82.0
+min_value = 1.0
+max_value = 1e+08
+step = 0.1
+value = 1.0
+
+[node name="Label6" type="Label" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 138.0
+margin_top = 63.0
+margin_right = 164.0
+margin_bottom = 77.0
+text = "mm"
+
+[node name="RemoveApertureButton" type="Button" parent="ApertureSettingsDialog/MarginContainer/VBoxContainer"]
+modulate = Color( 1, 0.631373, 0.631373, 1 )
+margin_top = 87.0
+margin_right = 164.0
+margin_bottom = 107.0
+text = "Remove Aperture"
+[connection signal="pressed" from="PanelContainer/HBoxContainer/AddLensButton" to="." method="_on_AddLensButton_pressed"]
+[connection signal="ready" from="PanelContainer/HBoxContainer/AddRaysButtons" to="." method="_on_AddRaysButtons_ready"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/AddApertureButton" to="." method="_on_AddApertureButton_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/ChangeBgButton" to="." method="_on_ChangeBgButton_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/ResetBgButton" to="." method="_on_ResetBgButton_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/NewButton" to="." method="_on_NewButton_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/LoadButton" to="." method="_on_LoadButton_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/SaveAsButton" to="." method="_on_SaveAsButton_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="about_to_show" from="LensSettingsDialog" to="." method="_on_LensSettingsDialog_about_to_show"]
+[connection signal="popup_hide" from="LensSettingsDialog" to="." method="_on_LensSettingsDialog_popup_hide"]
+[connection signal="value_changed" from="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer/Radius1SpinBox" to="." method="_on_Radius1SpinBox_value_changed"]
+[connection signal="value_changed" from="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer/Radius2SpinBox" to="." method="_on_Radius2SpinBox_value_changed"]
+[connection signal="value_changed" from="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer/DistanceSpinBox" to="." method="_on_DistanceSpinBox_value_changed"]
+[connection signal="value_changed" from="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer/WidthSpinBox" to="." method="_on_WidthSpinBox_value_changed"]
+[connection signal="value_changed" from="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer/HeightSpinBox" to="." method="_on_HeightSpinBox_value_changed"]
+[connection signal="value_changed" from="LensSettingsDialog/MarginContainer/VBoxContainer/GridContainer/RefrIndexSpinBox" to="." method="_on_RefrIndexSpinBox_value_changed"]
+[connection signal="pressed" from="LensSettingsDialog/MarginContainer/VBoxContainer/Remove" to="." method="_on_Remove_pressed"]
+[connection signal="about_to_show" from="RaySettingsDialog" to="." method="_on_RaySettingsDialog_about_to_show"]
+[connection signal="popup_hide" from="RaySettingsDialog" to="." method="_on_RaySettingsDialog_popup_hide"]
+[connection signal="color_changed" from="RaySettingsDialog/MarginContainer/VBoxContainer/GridContainer/RayColorButton" to="." method="_on_RayColorButton_color_changed"]
+[connection signal="value_changed" from="RaySettingsDialog/MarginContainer/VBoxContainer/GridContainer/RayWidthSpinBox" to="." method="_on_RayWidthSpinBox_value_changed"]
+[connection signal="pressed" from="RaySettingsDialog/MarginContainer/VBoxContainer/RemoveRayButton" to="." method="_on_RemoveRayButton_pressed"]
+[connection signal="about_to_show" from="ApertureSettingsDialog" to="." method="_on_ApertureSettingsDialog_about_to_show"]
+[connection signal="popup_hide" from="ApertureSettingsDialog" to="." method="_on_ApertureSettingsDialog_popup_hide"]
+[connection signal="value_changed" from="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer/OpeningSpinBox" to="." method="_on_OpeningSpinBox_value_changed"]
+[connection signal="value_changed" from="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer/AHeightSpinBox" to="." method="_on_AHeightSpinBox_value_changed"]
+[connection signal="value_changed" from="ApertureSettingsDialog/MarginContainer/VBoxContainer/GridContainer/AWidthSpinBox" to="." method="_on_AWidthSpinBox_value_changed"]
+[connection signal="pressed" from="ApertureSettingsDialog/MarginContainer/VBoxContainer/RemoveApertureButton" to="." method="_on_RemoveApertureButton_pressed"]
